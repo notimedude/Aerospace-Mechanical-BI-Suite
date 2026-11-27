@@ -5,7 +5,7 @@
 ![DAX](https://img.shields.io/badge/Semantic%20Model-DAX%20%26%20PBIR-06B6D4?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-10B981?style=for-the-badge)
 
-An end-to-end **Power BI Project (PBIP / TMDL)** business intelligence and quantitative forecasting pipeline benchmarking **18 global and Indian aerospace, defense, and industrial engineering leaders** across a **10-year historical horizon (2016?2026)** and a **3-year AI-projected trajectory (2026?2029)**.
+An end-to-end **Power BI Project (PBIP / TMDL)** business intelligence and quantitative forecasting pipeline benchmarking **18 global and Indian aerospace, defense, and industrial engineering leaders** across a **10-year historical horizon (2016-2026)** and a **3-year AI-projected trajectory (2026-2029)**.
 
 Instead of manually clicking together static `.pbix` binaries, the entire semantic model (`TMDL`), DAX measure layer, custom dark-mode theme (`RoyalAuroraCrossSector`), and 4-page `PBIR` visual layout are **generated programmatically in Python** for version-controlled BI engineering.
 
