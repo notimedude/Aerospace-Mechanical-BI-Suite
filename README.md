@@ -43,17 +43,17 @@ Instead of manually clicking together static `.pbix` binaries, the entire semant
 
 ```text
 Aerospace-Mechanical-BI-Suite/
-??? 01_fetch_and_forecast.py         # Market ingestion, Base-100 normalization & 3Y AI confidence bounds
-??? 02_generate_pbip.py              # Programmatic PBIP, TMDL semantic model, DAX & PBIR report generator
-??? requirements.txt                 # Python dependencies
-??? LICENSE                          # MIT License
-??? assets/                          # High-resolution dashboard previews
-??? data/
-?   ??? aerospace_data.csv           # 9 Aerospace & Defense peers (1,371 monthly records)
-?   ??? mechanical_data.csv          # 9 Mechanical & Industrial peers (1,404 monthly records)
-??? output/
-    ??? Aerospace_Intelligence/      # 4-page Power BI Project (.pbip + .Report + .SemanticModel)
-    ??? Mechanical_Intelligence/     # 4-page Power BI Project (.pbip + .Report + .SemanticModel)
+|-- 01_fetch_and_forecast.py         # Market ingestion, Base-100 normalization & 3Y AI confidence bounds
+|-- 02_generate_pbip.py              # Programmatic PBIP, TMDL semantic model, DAX & PBIR report generator
+|-- requirements.txt                 # Python dependencies
+|-- LICENSE                          # MIT License
+|-- assets/                          # High-resolution dashboard previews
+|-- data/
+|   |-- aerospace_data.csv           # 9 Aerospace & Defense peers (1,371 monthly records)
+|   +-- mechanical_data.csv          # 9 Mechanical & Industrial peers (1,404 monthly records)
++-- output/
+    |-- Aerospace_Intelligence/      # 4-page Power BI Project (.pbip + .Report + .SemanticModel)
+    +-- Mechanical_Intelligence/     # 4-page Power BI Project (.pbip + .Report + .SemanticModel)
 ```
 
 ---
