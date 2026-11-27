@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.vscode/
+*.pbix
+*.pbit
+.pbi/localSettings.json
+.pbi/cache.abf
+Thumbs.db
+.DS_Store

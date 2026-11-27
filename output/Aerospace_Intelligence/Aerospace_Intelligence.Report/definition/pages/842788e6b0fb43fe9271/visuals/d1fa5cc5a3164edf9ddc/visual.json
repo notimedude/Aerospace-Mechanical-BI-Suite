@@ -1,0 +1,130 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.15.0/schema.json",
+  "name": "d1fa5cc5a3164edf9ddc",
+  "position": {
+    "x": 864,
+    "y": 556,
+    "z": 4100,
+    "height": 328,
+    "width": 720,
+    "tabOrder": 4100
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CompanyData"
+                    }
+                  },
+                  "Property": "Industry"
+                }
+              },
+              "queryRef": "CompanyData.Industry",
+              "nativeQueryRef": "Industry"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CompanyData"
+                    }
+                  },
+                  "Property": "Company"
+                }
+              },
+              "queryRef": "CompanyData.Company",
+              "nativeQueryRef": "Company"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CompanyData"
+                    }
+                  },
+                  "Property": "Historical Return"
+                }
+              },
+              "queryRef": "CompanyData.Historical Return",
+              "nativeQueryRef": "Historical Return"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CompanyData"
+                    }
+                  },
+                  "Property": "Projected AI Growth"
+                }
+              },
+              "queryRef": "CompanyData.Projected AI Growth",
+              "nativeQueryRef": "Projected AI Growth"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CompanyData"
+                    }
+                  },
+                  "Property": "Operating Margin"
+                }
+              },
+              "queryRef": "CompanyData.Operating Margin",
+              "nativeQueryRef": "Operating Margin"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CompanyData"
+                    }
+                  },
+                  "Property": "Return on Equity"
+                }
+              },
+              "queryRef": "CompanyData.Return on Equity",
+              "nativeQueryRef": "Return on Equity"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'CROSS-SECTOR EXECUTIVE LEADERBOARD (18 COMPANIES)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.15.0/schema.json",
+  "name": "bf236465b6e54df6807d",
+  "position": {
+    "x": 1124,
+    "y": 204,
+    "z": 3100,
+    "height": 340,
+    "width": 460,
+    "tabOrder": 3100
+  },
+  "visual": {
+    "visualType": "scatterChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CompanyData"
+                    }
+                  },
+                  "Property": "Company"
+                }
+              },
+              "queryRef": "CompanyData.Company",
+              "nativeQueryRef": "Company",
+              "active": true
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CompanyData"
+                    }
+                  },
+                  "Property": "Company"
+                }
+              },
+              "queryRef": "CompanyData.Company",
+              "nativeQueryRef": "Company"
+            }
+          ]
+        },
+        "Size": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CompanyData"
+                    }
+                  },
+                  "Property": "Total Market Cap"
+                }
+              },
+              "queryRef": "CompanyData.Total Market Cap",
+              "nativeQueryRef": "Total Market Cap"
+            }
+          ]
+        },
+        "X": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CompanyData"
+                    }
+                  },
+                  "Property": "Operating Margin"
+                }
+              },
+              "queryRef": "CompanyData.Operating Margin",
+              "nativeQueryRef": "Operating Margin",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CompanyData"
+                    }
+                  },
+                  "Property": "Projected AI Growth"
+                }
+              },
+              "queryRef": "CompanyData.Projected AI Growth",
+              "nativeQueryRef": "Projected AI Growth"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'MARGIN VS. 3Y AI GROWTH'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

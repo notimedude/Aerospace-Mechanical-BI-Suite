@@ -1,0 +1,5 @@
+relationship 3827f9ae-9650-437c-8736-db786ba83693
+	joinOnDateBehavior: datePartOnly
+	fromColumn: CompanyData.Date
+	toColumn: LocalDateTable_58bcb26e-7960-4889-a221-372dc1fae436.Date
+

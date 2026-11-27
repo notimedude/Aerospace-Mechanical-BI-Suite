@@ -1,0 +1,97 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.15.0/schema.json",
+  "name": "b93ffd46e0a140a7b351",
+  "position": {
+    "x": 312,
+    "y": 204,
+    "z": 3000,
+    "height": 340,
+    "width": 632,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CompanyData"
+                    }
+                  },
+                  "Property": "Date"
+                }
+              },
+              "queryRef": "CompanyData.Date",
+              "nativeQueryRef": "Date",
+              "active": true
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CompanyData"
+                    }
+                  },
+                  "Property": "Industry"
+                }
+              },
+              "queryRef": "CompanyData.Industry",
+              "nativeQueryRef": "Industry"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CompanyData"
+                    }
+                  },
+                  "Property": "Performance Index"
+                }
+              },
+              "queryRef": "CompanyData.Performance Index",
+              "nativeQueryRef": "Performance Index"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'AEROSPACE VS. MECHANICAL 10Y & 3Y TRAJECTORY (BASE 100)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,188 @@
+table CompanyData
+	lineageTag: 702cac45-d430-43e4-a841-2fb5ad6c0d38
+
+	measure 'Total Market Cap' = CALCULATE(AVERAGE(CompanyData[Market_Cap_B]), CompanyData[Record_Type] = "Actual")
+		formatString: #,0.0
+		lineageTag: 662243ff-1ca3-4641-a691-5c46a52da740
+
+	measure 'Projected AI Growth' = AVERAGEX(VALUES(CompanyData[Company]), DIVIDE(CALCULATE(LASTNONBLANKVALUE(CompanyData[Date], AVERAGE(CompanyData[Normalized_Index])), CompanyData[Record_Type] = "AI Forecast (3Y)") - CALCULATE(LASTNONBLANKVALUE(CompanyData[Date], AVERAGE(CompanyData[Normalized_Index])), CompanyData[Record_Type] = "Actual"), CALCULATE(LASTNONBLANKVALUE(CompanyData[Date], AVERAGE(CompanyData[Normalized_Index])), CompanyData[Record_Type] = "Actual"), 0))
+		formatString: +0.0%;-0.0%;0.0%
+		lineageTag: 599d662e-bc89-4086-bfd0-f457a86114a2
+
+	measure 'Historical Return' = AVERAGEX(VALUES(CompanyData[Company]), DIVIDE(CALCULATE(LASTNONBLANKVALUE(CompanyData[Date], AVERAGE(CompanyData[Normalized_Index])), CompanyData[Record_Type] = "Actual") - CALCULATE(FIRSTNONBLANKVALUE(CompanyData[Date], AVERAGE(CompanyData[Normalized_Index])), CompanyData[Record_Type] = "Actual"), CALCULATE(FIRSTNONBLANKVALUE(CompanyData[Date], AVERAGE(CompanyData[Normalized_Index])), CompanyData[Record_Type] = "Actual"), 0))
+		formatString: +0.0%;-0.0%;0.0%
+		lineageTag: 3e77dd56-b7db-47f7-b887-d3347aa53a18
+
+	measure 'Operating Margin' = AVERAGE(CompanyData[Operating_Margin_Pct]) / 100
+		formatString: 0.0%
+		lineageTag: eb0b6b5e-b355-4f5e-b96e-cbf0a768ea50
+
+	measure 'NLP Sentiment' = AVERAGE(CompanyData[NLP_Sentiment_Score])
+		formatString: 0.0
+		lineageTag: 5151f88d-31f8-4161-b968-12ad92167b39
+
+	measure 'Performance Index' = AVERAGE(CompanyData[Normalized_Index])
+		formatString: #,0.0
+		lineageTag: 1699710f-ca29-450d-babb-212b88b2a05e
+
+	measure 'Forecast Upper' = AVERAGE(CompanyData[Forecast_Upper_Index])
+		formatString: #,0.0
+		lineageTag: 44f43ec2-0f9a-417b-ab23-ccf3d4dfc454
+
+	measure 'Forecast Lower' = AVERAGE(CompanyData[Forecast_Lower_Index])
+		formatString: #,0.0
+		lineageTag: 963c0d63-c8bd-47a7-848b-06575e026785
+
+	measure 'Annual Revenue RunRate' = AVERAGE(CompanyData[Monthly_Revenue_B]) * 12
+		formatString: #,0.0
+		lineageTag: ee9f4a09-7ef1-4b71-b259-b58d18b4fab0
+
+	measure 'Return on Equity' = AVERAGE(CompanyData[ROE_Pct]) / 100
+		formatString: 0.0%
+		lineageTag: b7413bf9-922c-4f30-9f71-65fc0d515e05
+
+	measure 'Debt to Equity' = AVERAGE(CompanyData[Debt_to_Equity])
+		formatString: 0.00
+		lineageTag: b66b6de1-bec4-4193-9083-f1e2c54cf480
+
+	column Industry
+		dataType: string
+		lineageTag: cbab9938-b6a5-43a8-8666-1c45cc4e2b4b
+		summarizeBy: none
+		sourceColumn: Industry
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ticker
+		dataType: string
+		lineageTag: bfee6c78-19b3-45c7-8fd3-ad8134b90ae0
+		summarizeBy: none
+		sourceColumn: Ticker
+
+		annotation SummarizationSetBy = Automatic
+
+	column Company
+		dataType: string
+		lineageTag: 41d26142-f973-4466-8e6c-100de5dbf417
+		summarizeBy: none
+		sourceColumn: Company
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: de640a28-7b65-4791-a369-8864edd56910
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: 3827f9ae-9650-437c-8736-db786ba83693
+			defaultHierarchy: LocalDateTable_58bcb26e-7960-4889-a221-372dc1fae436.'Date Hierarchy'
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Record_Type
+		dataType: string
+		lineageTag: a07cf229-3ab8-4214-a99d-a83845ca39e8
+		summarizeBy: none
+		sourceColumn: Record_Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Close_Price
+		dataType: double
+		lineageTag: ff0bfb2f-9fc2-46d1-9e07-940c796ec57d
+		summarizeBy: sum
+		sourceColumn: Close_Price
+
+		annotation SummarizationSetBy = Automatic
+
+	column Normalized_Index
+		dataType: double
+		lineageTag: 3ad02c59-66c5-41e3-b478-9fd791f9b601
+		summarizeBy: sum
+		sourceColumn: Normalized_Index
+
+		annotation SummarizationSetBy = Automatic
+
+	column Monthly_Revenue_B
+		dataType: double
+		lineageTag: e0793c5c-007f-45b2-9ac9-3353df997661
+		summarizeBy: sum
+		sourceColumn: Monthly_Revenue_B
+
+		annotation SummarizationSetBy = Automatic
+
+	column Operating_Margin_Pct
+		dataType: double
+		lineageTag: b061a063-5fae-47af-b3ea-afeec797b72c
+		summarizeBy: sum
+		sourceColumn: Operating_Margin_Pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column ROE_Pct
+		dataType: double
+		lineageTag: 9151e85c-4629-40c5-b0fd-71d805449fde
+		summarizeBy: sum
+		sourceColumn: ROE_Pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column Debt_to_Equity
+		dataType: double
+		lineageTag: 35c8c6e9-c1ca-48b3-9712-228ec7612c88
+		summarizeBy: sum
+		sourceColumn: Debt_to_Equity
+
+		annotation SummarizationSetBy = Automatic
+
+	column Market_Cap_B
+		dataType: double
+		lineageTag: 08f64405-ef9b-45f2-9ce4-c98af006a08f
+		summarizeBy: sum
+		sourceColumn: Market_Cap_B
+
+		annotation SummarizationSetBy = Automatic
+
+	column NLP_Sentiment_Score
+		dataType: double
+		lineageTag: 65667a02-6043-46b5-937b-e5d4a53d4909
+		summarizeBy: sum
+		sourceColumn: NLP_Sentiment_Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column Forecast_Lower_Index
+		dataType: double
+		lineageTag: 9a229f9d-a65f-468e-bad5-e0beca3e37be
+		summarizeBy: sum
+		sourceColumn: Forecast_Lower_Index
+
+		annotation SummarizationSetBy = Automatic
+
+	column Forecast_Upper_Index
+		dataType: double
+		lineageTag: 7f449293-d2a7-4635-9ad2-29cae4b70f6a
+		summarizeBy: sum
+		sourceColumn: Forecast_Upper_Index
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CompanyData = m
+		mode: import
+		source =
+				let
+				    AeroRaw = Csv.Document(File.Contents("C:\\PBI_Dashboards\\data\\aerospace_data.csv"),[Delimiter=",", Columns=15, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    AeroPromoted = Table.PromoteHeaders(AeroRaw, [PromoteAllScalars=true]),
+				    MechRaw = Csv.Document(File.Contents("C:\\PBI_Dashboards\\data\\mechanical_data.csv"),[Delimiter=",", Columns=15, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    MechPromoted = Table.PromoteHeaders(MechRaw, [PromoteAllScalars=true]),
+				    Combined = Table.Combine({AeroPromoted, MechPromoted}),
+				    Typed = Table.TransformColumnTypes(Combined,{{"Date", type date}, {"Close_Price", type number}, {"Normalized_Index", type number}, {"Monthly_Revenue_B", type number}, {"Operating_Margin_Pct", type number}, {"ROE_Pct", type number}, {"Debt_to_Equity", type number}, {"Market_Cap_B", type number}, {"NLP_Sentiment_Score", type number}, {"Forecast_Lower_Index", type number}, {"Forecast_Upper_Index", type number}})
+				in
+				    Typed
+

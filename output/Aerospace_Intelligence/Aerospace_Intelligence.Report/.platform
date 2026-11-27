@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Aerospace_Intelligence"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "6aeac0ed-67b3-426b-88b0-655d5dd607cd"
+  }
+}

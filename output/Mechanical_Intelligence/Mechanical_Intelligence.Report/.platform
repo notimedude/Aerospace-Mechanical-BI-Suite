@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Mechanical_Intelligence"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "044bd4e8-6fb4-4492-9084-45fb62d10ac2"
+  }
+}
